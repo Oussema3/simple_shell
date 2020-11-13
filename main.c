@@ -8,7 +8,7 @@
 #define MAX_WORD 10
 #define MAX_CHAR 100
 
-
+//plz get added now FFS
 
 void remove_end0fLine(char line[])
 {
