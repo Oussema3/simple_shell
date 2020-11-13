@@ -52,13 +52,15 @@ int process_line(char* args[], char line[])
     }
   return 1;
 }
+
+
 int read_parse_line(char* args[], char line[])
 {
   int i = 0;
   read_line(line);
   process_line(args,line);
   return 1;
-}
+ }
 int main ()
 {
   char* args[MAX_WORD];
@@ -69,7 +71,7 @@ int main ()
 
 
 
-      pid_t pid = fork();
+      int pid = fork();
 
       if (pid == 0)
 	{
