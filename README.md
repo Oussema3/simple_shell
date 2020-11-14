@@ -42,7 +42,7 @@ Compilation and Testing
 Authors
     Mohamed Chedly
     Oussama Ajmi
-    
-    https://www.google.com/url?sa=i&url=https%3A%2F%2Fedlibre.com%2Fnew%2Fholberton-school-the-new-school-gen-developers-in-san-francisco.html&psig=AOvVaw1ODmzD-1xc7T3gkvDDLg1e&ust=1605465168193000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCqtP7Vgu0CFQAAAAAdAAAAABAD
+   
+   ![holberton-logo-horizontal](https://user-images.githubusercontent.com/70922643/99154853-3a0f1300-26b3-11eb-9a7d-091c4fac1212.jpg)
 
 
