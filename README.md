@@ -1,4 +1,4 @@
-# Welcome to the gates of Shell
+# ⚡Welcome to the gates of Shell⚡
 
 # The Simple Shell
 "The end of trimester project"
@@ -50,7 +50,7 @@
     $
 
 
-# Authors
+# ⏳Authors⏳
 #####   ◆![Mohamed Chedly](https://github.com/chedly99)
    
 #####   ◆![Oussema Ajmi](https://github.com/Oussema3)
