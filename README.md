@@ -23,15 +23,19 @@
 ## Compilation and Testing
 
 1) Clone repo to your local directory
+
     https://github.com/Oussema3/simple_shell.git
 
 2) Start up simple_shell, compile using
+
     gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 3) Start the shell
+
    ./hsh
 
 4) Example Output
+
     $ ./hsh
     ($) /bin/ls
     hsh main.c shell.c
