@@ -1,5 +1,5 @@
-# ⚡Welcome to the gates of Shell⚡
-
+#                                                                 ⚡Welcome to the gates of Shell⚡
+    
 # The Simple Shell✅
 "The end of trimester project"
 
