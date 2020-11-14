@@ -48,6 +48,9 @@
     ($) exit
    
     $
+    
+    ![Linux_command-line _Bash _GNOME_Terminal _screenshot](https://user-images.githubusercontent.com/70922643/99155816-b73e8600-26bb-11eb-8e5d-f684c884e023.png)
+
 
 
 # ⏳Authors⏳
