@@ -1,5 +1,5 @@
 # The Simple Shell
- ####   "The end of trimester project"
+"The end of trimester project"
 
 ## Welcome to the gates of Shell
 
@@ -24,28 +24,36 @@
 
 1) Clone repo to your local directory
 
-    https://github.com/Oussema3/simple_shell.git
+   ▀ https://github.com/Oussema3/simple_shell.git
 
 2) Start up simple_shell, compile using
 
-    gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+   ▀ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 3) Start the shell
 
-   ./hsh
+   ▀ ./hsh
 
 4) Example Output
 
     $ ./hsh
+   
     ($) /bin/ls
+   
     hsh main.c shell.c
+   
     ($)
+   
     ($) exit
+   
     $
 
+
 # Authors
-    Mohamed Chedly
-    Oussama Ajmi
+#####   ![Mohamed Chedly](https://github.com/chedly99)
+   
+#####   ![Oussema Ajmi](https://github.com/Oussema3)
+   
    
    ![holberton-logo-horizontal](https://user-images.githubusercontent.com/70922643/99154853-3a0f1300-26b3-11eb-9a7d-091c4fac1212.jpg)
 
