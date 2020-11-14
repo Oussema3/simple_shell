@@ -17,14 +17,10 @@ void remove_end0fLine(char line[])
 {
   int i = 0;
   while(line[i] != '\n')
-    {
+          i++;
 
-
-      i++;
       line[i] = '\0';
 
-
-    }
 }
 
 
