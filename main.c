@@ -10,13 +10,14 @@
 #define MAX_CHAR 100
 
 //plz get added now FFS
-
+//adding comments to check commiting
 
 
 void remove_end0fLine(char line[])
 {
   int i = 0;
   while(line[i] != '\n')
+<<<<<<< HEAD
     
 
 
@@ -25,6 +26,11 @@ void remove_end0fLine(char line[])
 
 
 
+=======
+    i++;
+
+	    line[i] = '\0';
+>>>>>>> 3feb3b1a9e9510b703f92e278e7703b9156ebcfa
 }
 
 
@@ -113,5 +119,12 @@ int main ()
     }
 
   return 0;
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 3feb3b1a9e9510b703f92e278e7703b9156ebcfa
 
 }
