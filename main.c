@@ -11,6 +11,7 @@
 
 //plz get added now FFS
 //adding comments to check commiting
+//Readding comments to recheck commiting
 
 
 void remove_end0fLine(char line[])
@@ -22,7 +23,7 @@ void remove_end0fLine(char line[])
   line[i] = '\0';
 
 
-     
+
 }
 
 
