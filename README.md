@@ -1,9 +1,9 @@
-#The Simple Shell
+The Simple Shell
     "The end of trimester project"
 
-##Welcome to the gates of Shell
+Welcome to the gates of Shell
 
-##Learning Objectives:
+Learning Objectives:
 
     Who designed and implemented the original Unix operating system
     Who wrote the first version of the UNIX shell
@@ -20,7 +20,7 @@
     How to suspend the execution of a process until one of its children terminates
     What is EOF / “end-of-file”?
 
-##Compilation and Testing
+Compilation and Testing
 
 1) Clone repo to your local directory
     https://github.com/Oussema3/simple_shell.git
@@ -39,6 +39,6 @@
     ($) exit
     $
 
-##Authors
+Authors
     Mohamed Chedly
     Oussama Ajmi
