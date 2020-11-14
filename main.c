@@ -17,24 +17,9 @@ void remove_end0fLine(char line[])
 {
   int i = 0;
   while(line[i] != '\n')
-<<<<<<< HEAD
-          i++;
-=======
-    
+    i++;
 
->>>>>>> 46d7eb23b10ce1362c96f48bef9970a201c1df98
-
-      line[i] = '\0';
-
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-
-=======
-    }
->>>>>>> dfdb66890c19bce84a9612d5200fd58c96bf1a76
->>>>>>> 46d7eb23b10ce1362c96f48bef9970a201c1df98
+	    line[i] = '\0';
 }
 
 
@@ -89,11 +74,7 @@ int process_line(char* args[], char line[])
 
 int read_parse_line(char* args[], char line[])
 {
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> dfdb66890c19bce84a9612d5200fd58c96bf1a76
  int i = 0;
   read_line(line);
   process_line(args,line);
@@ -127,10 +108,9 @@ int main ()
     }
 
   return 0;
-<<<<<<< HEAD
-=======
 
-}
->>>>>>> dfdb66890c19bce84a9612d5200fd58c96bf1a76
+
+
+
 
 }
