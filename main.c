@@ -24,11 +24,7 @@ void remove_end0fLine(char line[])
       line[i] = '\0';
 
 
-<<<<<<< HEAD
 
-=======
-    }
->>>>>>> dfdb66890c19bce84a9612d5200fd58c96bf1a76
 }
 
 
@@ -83,11 +79,7 @@ int process_line(char* args[], char line[])
 
 int read_parse_line(char* args[], char line[])
 {
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> dfdb66890c19bce84a9612d5200fd58c96bf1a76
  int i = 0;
   read_line(line);
   process_line(args,line);
@@ -121,10 +113,5 @@ int main ()
     }
 
   return 0;
-<<<<<<< HEAD
-=======
-
-}
->>>>>>> dfdb66890c19bce84a9612d5200fd58c96bf1a76
 
 }
