@@ -10,7 +10,7 @@
 #define MAX_CHAR 100
 
 //plz get added now FFS
-
+//adding comments to check commiting
 
 
 void remove_end0fLine(char line[])
