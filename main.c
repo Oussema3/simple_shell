@@ -1,3 +1,4 @@
+#include "shell.h"
 #include <stdio.h>
 #include <sys/wait.h>
 #include <string.h>
@@ -15,9 +16,6 @@ int piping_flag;
 char* input_file = NULL;
 char* output_file = NULL;
 
-//plz get added now FFS
-//adding comments to check commiting
-//Readding comments to recheck commiting
 
 
 void remove_end0fLine(char line[])
@@ -175,7 +173,7 @@ int read_parse_line(char* args[], char line[],char* piping_args[])
 void piping_handle(char* args[],char* piping_args[] ,int pipefd[])
 {
   int pid;
-  int i;
+  
 
   pid = fork();
   if(pid == 0)
@@ -241,8 +239,8 @@ int main ()
 	  input_redirection_flag = 0;
 	  output_redirection_flag = 0;
 	  piping_flag = 0;
-	  input_file == NULL;
-	  output_file == NULL;
+	  
+	  
 	}
     }
 
@@ -250,3 +248,5 @@ int main ()
 
 
 }
+
+
