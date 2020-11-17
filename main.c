@@ -168,12 +168,47 @@ int read_parse_line(char* args[], char line[],char* piping_args[])
   return 1;
 
  }
+
+
+
+
+void piping_handle(char* args[],char* piping_args[] ,int pipefd[])
+{
+  int pid;
+  int i;
+
+  pid = fork();
+  if(pid == 0)
+    {
+        dup2(pipefd[1], 1);
+	close(pipefd[0]);
+	execvp(args[0], args);
+	perror(args[0]);
+    }
+
+  else 
+    {
+      dup2(pipefd[0], 0);
+      close(pipefd[1]);
+      execvp(piping_args[0],piping_args);
+      perror(piping_args[0]);
+    }
+
+}
+
+
+
+
 int main ()
 {
   
   char* args[MAX_WORD];
-char* piping_args[MAX_WORD]
+  char* piping_args[MAX_WORD];
   char line[MAX_CHAR];
+  int pipefd [2];
+
+
+  pipe(pipefd);
 
  while(read_parse_line(args,line,piping_args))
     {
@@ -189,7 +224,12 @@ char* piping_args[MAX_WORD]
 	  if(output_redirection_flag == 1 && output_file != NULL)
 	    dup2(open(output_file,O_RDWR|O_CREAT,0777),1);
 
-	  if(piping_flag == 1);
+	  if(piping_flag == 1)
+	    {
+
+	    piping_handle(args,piping_args,pipefd); 
+	    
+	    }
 
 	  execvp(args[0],args);
 
