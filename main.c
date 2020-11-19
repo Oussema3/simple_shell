@@ -34,14 +34,24 @@ void remove_end0fLine(char line[])
 
 
 
-void read_line(char line[])
+int read_line(char line[])
 {
 
-  char* ret = fgets(line,MAX_CHAR,stdin);
+  char *buffer = line;
+  size_t bufsize = 32;
+  size_t ret;
+
+  
+  
+  ret = getline(&buffer,&bufsize,stdin);
+
   remove_end0fLine(line);
 
-  if( strcmp(line,"exit")== 0 || ret == NULL)
+  if( strcmp(line,"exit")== 0 || ret == 0)
     exit(0);
+  else 
+    return ret;
+  
 
 }
 
