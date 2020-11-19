@@ -1,7 +1,7 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-// libraries //
+
 
 #include <stdio.h>
 #include <sys/wait.h>
@@ -15,11 +15,11 @@
 #define MAX_WORD 10
 #define MAX_CHAR 100
 
-// functions //
+
 
 
 void remove_end0fLine(char line[]);
-void read_line(char line[]);
+int read_line(char line[]);
 int process_line(char* temp[], char line[]);
 int pipe_ad_redirection_checking(char* temp[]);
 void check_line(char* temp[]);
