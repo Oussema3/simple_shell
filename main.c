@@ -17,29 +17,6 @@ char* input_file = NULL;
 char* output_file = NULL;
 
 
-void remove_end0fLine(char line[])
-{
-  int i = 0;
-  while(line[i] != '\n')
-    i++;
-  line[i] = '\0';
-}
-
-int read_line(char line[])
-{
-  char *buffer = line;
-  size_t bufsize = 32;
-  size_t ret;
-
-  ret = getline(&buffer,&bufsize,stdin);
-
-  remove_end0fLine(line);
-
-  if( strcmp(line,"exit")== 0 || ret == 0)
-    exit(0);
-  else
-    return ret;
-}
 
 int process_line(char* temp[], char line[])
 {
