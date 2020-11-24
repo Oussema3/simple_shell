@@ -17,76 +17,52 @@ char* input_file = NULL;
 char* output_file = NULL;
 
 
-
 void remove_end0fLine(char line[])
 {
   int i = 0;
   while(line[i] != '\n')
-
     i++;
   line[i] = '\0';
-
-
-
 }
-
-
-
-
 
 int read_line(char line[])
 {
-
   char *buffer = line;
   size_t bufsize = 32;
   size_t ret;
 
-  
-  
   ret = getline(&buffer,&bufsize,stdin);
 
   remove_end0fLine(line);
 
   if( strcmp(line,"exit")== 0 || ret == 0)
     exit(0);
-  else 
+  else
     return ret;
-  
-
 }
-
-
-
-
 
 int process_line(char* temp[], char line[])
 {
-  
   int i= 0;
-  temp[i] = strtok(line, " ");
 
+  temp[i] = strtok(line, " ");
   while(temp[i] != NULL)
     {
-
       i++;
       temp[i]= strtok(NULL," ");
-
     }
-
   return 1;
-
 }
 
-
 int pipe_ad_redirection_checking(char* temp[])
-
 {
   int i = 0;
+
   while(temp[i] != NULL)
     {
       if(strcmp(temp[i],">") == 0)
 	{
-	  output_redirection_flag = 1; 
+	  output_redirection_flag = 1;
 	  output_file = temp[i+1];
 	  return i;
 	}
@@ -107,9 +83,7 @@ int pipe_ad_redirection_checking(char* temp[])
 }
 
 void check_line(char* temp[])
-
 {
-
   int i = 0;
   int pipe_cnt = 0;
   int output_redirection_cnt = 0;
@@ -118,12 +92,9 @@ void check_line(char* temp[])
 
   if(temp[i] == NULL)
     {
-
       printf("NO COMMAND\n");
       return ;
     }
-
-
   while(temp[i] != NULL)
     {
       if(strcmp(temp[i],">")==0)
@@ -134,7 +105,6 @@ void check_line(char* temp[])
 
       if(strcmp(temp[i],"|")==0)
 	pipe_cnt++;
-
       i++;
     }
   total_cnt = input_redirection_cnt+output_redirection_cnt+pipe_cnt;
@@ -152,7 +122,6 @@ int read_parse_line(char* args[], char line[],char* piping_args[])
   int pos ;
   read_line(line);
   process_line(temp,line);
-
   check_line(temp);
 
   pos = pipe_ad_redirection_checking(temp);
@@ -174,16 +143,11 @@ int read_parse_line(char* args[], char line[],char* piping_args[])
 	}
     }
   return 1;
-
  }
-
-
-
 
 void piping_handle(char* args[],char* piping_args[] ,int pipefd[])
 {
   int pid;
-  
 
   pid = fork();
   if(pid == 0)
@@ -193,70 +157,45 @@ void piping_handle(char* args[],char* piping_args[] ,int pipefd[])
 	execvp(args[0], args);
 	perror(args[0]);
     }
-
-  else 
+  else
     {
       dup2(pipefd[0], 0);
       close(pipefd[1]);
       execvp(piping_args[0],piping_args);
       perror(piping_args[0]);
     }
-
 }
-
-
-
 
 int main ()
 {
-  
   char* args[MAX_WORD];
   char* piping_args[MAX_WORD];
   char line[MAX_CHAR];
   int pipefd [2];
-
-
   pipe(pipefd);
 
  while(read_parse_line(args,line,piping_args))
     {
-
-
       int pid = fork();
-
       if (pid == 0)
 	{
 	  if(input_redirection_flag == 1 && input_file != NULL)
 	    dup2(open(input_file,O_RDWR|O_CREAT,0777),0);
-
 	  if(output_redirection_flag == 1 && output_file != NULL)
 	    dup2(open(output_file,O_RDWR|O_CREAT,0777),1);
-
 	  if(piping_flag == 1)
 	    {
-
-	    piping_handle(args,piping_args,pipefd); 
-	    
+	    piping_handle(args,piping_args,pipefd);
 	    }
-
 	  execvp(args[0],args);
-
 	}
       else
 	{
-	  
 	  waitpid(pid,0,0);
 	  input_redirection_flag = 0;
 	  output_redirection_flag = 0;
 	  piping_flag = 0;
-	  
-	  
 	}
     }
-
   return 0;
-
-
 }
-
-
