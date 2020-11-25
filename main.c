@@ -10,7 +10,12 @@
 #define MAX_WORD 10
 #define MAX_CHAR 100
 
+int input_redirection_flag;
+int output_redirection_flag;
+int piping_flag;
 
+char *input_file = NULL;
+char *output_file = NULL;
 
 /**
 *pipe_ad_redirection_checking - pipe ad redirection checking
