@@ -15,9 +15,6 @@
 #define MAX_WORD 10
 #define MAX_CHAR 100
 
-int input_redirection_flag ;
-int output_redirection_flag ;
-int piping_flag;
 
 
 void remove_end0fLine(char line[]);
