@@ -10,7 +10,9 @@
 #define MAX_WORD 10
 #define MAX_CHAR 100
 
-
+int input_redirection_flag;
+int output_redirection_flag;
+int piping_flag;
 
 char *input_file = NULL;
 char *output_file = NULL;
@@ -18,15 +20,15 @@ char *output_file = NULL;
 /**
 *pipe_ad_redirection_checking - pipe ad redirection checking
 *@temp: character
-*Return: int
+*Return: integer
 */
 
 int pipe_ad_redirection_checking(char *temp[])
-
 {
 int i = 0;
 while (temp[i] != NULL)
 {
+
 if (strcmp(temp[i], ">") == 0)
 {
 output_redirection_flag = 1;
@@ -49,13 +51,13 @@ i++;
 return (i);
 }
 /**
-*piping_handle - piping HANDLE
+*piping_handle - piping handle
 *@args: character
 *@piping_args: character
 *@pipefd: integer
 *Return: void
 */
-void piping_handle(char *args[], char *piping_args[], int *pipefd[])
+void piping_handle(char *args[], char *piping_args[], int pipefd[])
 {
 int pid;
 pid = fork();
@@ -66,7 +68,6 @@ close(pipefd[0]);
 execvp(args[0], args);
 perror(args[0]);
 }
-
 else
 {
 dup2(pipefd[0], 0);
@@ -75,21 +76,17 @@ execvp(piping_args[0], piping_args);
 perror(piping_args[0]);
 }
 }
-
 /**
 *main - main function
-*Return: integer
+*Return: void
 */
 int main(void)
 {
-
 char *args[MAX_WORD];
 char *piping_args[MAX_WORD];
 char line[MAX_CHAR];
 int pipefd[2];
-
 pipe(pipefd);
-
 while (read_parse_line(args, line, piping_args))
 {
 int pid = fork();
